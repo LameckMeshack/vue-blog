@@ -12,7 +12,7 @@
         <div class="blog-cards">
           <BlogCard
             :post="post"
-            v-for="(post, index) in blogPostsCards"
+            v-for="(post, index) in sampleBlogCards"
             :key="index"
           />
         </div>
@@ -61,29 +61,12 @@ export default {
           blogCoverPhoto: "coding",
         },
       ],
-      blogPostsCards: [
-        {
-          blogTitle: "Blog Card #1",
-          blogCoverPhoto: "stock-1",
-          blogDate: "April 4, 2021",
-        },
-        {
-          blogTitle: "Blog Card #2",
-          blogCoverPhoto: "stock-2",
-          blogDate: "April 4, 2021",
-        },
-        {
-          blogTitle: "Blog Card #3",
-          blogCoverPhoto: "stock-3",
-          blogDate: "April 4, 2021",
-        },
-        {
-          blogTitle: "Blog Card #4",
-          blogCoverPhoto: "stock-4",
-          blogDate: "April 4, 2021",
-        },
-      ],
     };
+  },
+  computed: {
+    sampleBlogCards() {
+      return this.$store.state.sampleBlogCards;
+    },
   },
 };
 </script>
