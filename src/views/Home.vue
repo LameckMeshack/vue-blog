@@ -1,11 +1,21 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <BlogPost :post="welcomeScreen" />
+    <BlogPost
+      :post="post"
+      v-for="(post, index) in sampleBlogPost"
+      :key="index"
+    />
+  </div>
 </template>
 
 <script>
+import BlogPost from "@/components/BlogPost.vue";
 export default {
   name: "HomePage",
-  components: {},
+  components: {
+    BlogPost,
+  },
   data() {
     return {
       welcomeScreen: {
@@ -22,7 +32,7 @@ export default {
           blogCoverPhoto: "coding",
         },
         {
-          title: "This is a filler title!",
+          title: "This is a filler title!2  ",
           blogHTML: "This is a filler blog post Title!",
           blogCoverPhoto: "coding",
         },
