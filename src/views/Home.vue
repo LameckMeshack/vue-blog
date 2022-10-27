@@ -32,11 +32,13 @@
 <script>
 import BlogCard from "@/components/BlogCard.vue";
 import BlogPost from "@/components/BlogPost.vue";
+import Arrow from "@/assets/Icons/arrow-right-light.svg";
 export default {
   name: "HomePage",
   components: {
     BlogPost,
     BlogCard,
+    Arrow,
   },
   data() {
     return {
