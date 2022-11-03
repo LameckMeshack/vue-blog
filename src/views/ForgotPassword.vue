@@ -1,12 +1,18 @@
 <template>
   <div class="reset-password">
-    <Modal v-if="modalActive" :modalMessage="modalMessage" v-on:close-modal="closeModal" />
+    <Modal
+      v-if="modalActive"
+      :modalMessage="modalMessage"
+      v-on:close-modal="closeModal"
+    />
     <Loading v-if="loading" />
     <div class="form-wrap">
       <form class="reset">
         <p class="login-register">
           Back to
-          <router-link class="router-link" :to="{ name: 'Login' }">Login</router-link>
+          <router-link class="router-link" :to="{ name: 'Login' }"
+            >Login</router-link
+          >
         </p>
         <h2>Reset Password</h2>
         <p>Forgot your passowrd? Enter your email to reset it</p>
@@ -52,7 +58,8 @@ export default {
         .auth()
         .sendPasswordResetEmail(this.email)
         .then(() => {
-          this.modalMessage = "If your account exists, you will receive a email";
+          this.modalMessage =
+            "If your account exists, you will receive a email";
           this.loading = false;
           this.modalActive = true;
         })
